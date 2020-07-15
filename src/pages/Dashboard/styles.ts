@@ -29,6 +29,11 @@ export const Card = styled.div`
   border-radius: 5px;
   color: ${({ total }: CardProps): string => (total ? '#fff' : '#363F5F')};
 
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
   header {
     display: flex;
     align-items: center;
@@ -52,7 +57,7 @@ export const TableContainer = styled.section`
 
   table {
     width: 100%;
-    border-spacing: 0 8px;
+    border-spacing: 0 12px;
 
     th {
       color: #969cb3;
@@ -63,33 +68,46 @@ export const TableContainer = styled.section`
       line-height: 24px;
     }
 
-    td {
-      padding: 20px 32px;
-      border: 0;
-      background: #fff;
-      font-size: 16px;
-      font-weight: normal;
-      color: #969cb3;
-
-      &.title {
-        color: #363f5f;
+    tbody {
+      tr {
+        background: #fff;
+        transition: transform 0.2s;
       }
 
-      &.income {
-        color: #12a454;
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+
+        transform: translateX(15px);
       }
 
-      &.outcome {
-        color: #e83f5b;
+      td {
+        padding: 20px 32px;
+        border: 0;
+        background: inherit;
+        font-size: 16px;
+        font-weight: normal;
+        color: #969cb3;
+
+        &.title {
+          color: #363f5f;
+        }
+
+        &.income {
+          color: #12a454;
+        }
+
+        &.outcome {
+          color: #e83f5b;
+        }
       }
-    }
 
-    td:first-child {
-      border-radius: 8px 0 0 8px;
-    }
+      td:first-child {
+        border-radius: 8px 0 0 8px;
+      }
 
-    td:last-child {
-      border-radius: 0 8px 8px 0;
+      td:last-child {
+        border-radius: 0 8px 8px 0;
+      }
     }
   }
 `;

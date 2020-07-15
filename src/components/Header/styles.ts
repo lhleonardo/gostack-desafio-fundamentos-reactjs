@@ -23,12 +23,18 @@ export const Container = styled.div<ContainerProps>`
         font-size: 16px;
         transition: opacity 0.2s;
 
+        padding-bottom: 10px;
+
         & + a {
           margin-left: 32px;
         }
 
         &:hover {
           opacity: 0.6;
+        }
+
+        &.selected {
+          border-bottom: 2px solid #ff872c;
         }
       }
     }
